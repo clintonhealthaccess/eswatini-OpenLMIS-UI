@@ -19,6 +19,7 @@ services:
       - cce-ui
       - ui-components
       - ui-layout
+      - offline-ui
     depends_on:
       - auth-ui
       - fulfillment-ui
@@ -29,6 +30,7 @@ services:
       - cce-ui
       - ui-components
       - ui-layout
+      - offline-ui
   auth-ui:
     image: openlmis/auth-ui:6.2.6-SNAPSHOT
     volumes:
@@ -65,6 +67,10 @@ services:
     image: openlmis/ui-layout:5.1.9-SNAPSHOT
     volumes:
       - '/openlmis-ui-layout'
+  offline-ui:
+    image: openlmis/offline-ui:1.0.0-SNAPSHOT
+    volumes:
+      - '/openlmis-offline-ui'
   image:
     build: .
     image: openlmis/reference-ui
