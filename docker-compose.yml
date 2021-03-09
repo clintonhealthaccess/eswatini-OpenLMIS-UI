@@ -32,10 +32,10 @@ services:
       - ui-layout
       - offline-ui
     logging:
-    driver: "json-file"
-    options:
-        max-file: 5
-        max-size: 1m
+      driver: 'json-file'
+      options:
+          max-file: 5
+          max-size: 1m
   auth-ui:
     image: openlmis/auth-ui:6.2.6-SNAPSHOT
     volumes:
