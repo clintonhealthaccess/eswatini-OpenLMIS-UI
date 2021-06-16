@@ -59,7 +59,7 @@ pipeline {
                                  fi
                                  docker-compose pull
                                  docker-compose down --volumes
-                                 docker-compose run --entrypoint /dev-ui/build.sh reference-ui
+                                 docker-compose run --entrypoint /dev-ui/build.sh eswatini-ui
                                  docker-compose build image
                                  docker-compose down --volumes
                                  sudo rm -rf node_modules/
@@ -98,8 +98,8 @@ pipeline {
                 }
             }
             steps {
-                sh "docker tag openlmis/reference-ui:latest openlmis/reference-ui:${VERSION}"
-                sh "docker push openlmis/reference-ui:${VERSION}"
+                sh "docker tag kausamusa/eswatini-ui:latest kausamusa/eswatini-ui:${VERSION}"
+                sh "docker push kausamusa/eswatini-ui:${VERSION}"
             }
             post {
                 success {
@@ -127,7 +127,7 @@ pipeline {
             }
         }
         success {
-            build job: 'OpenLMIS-reference-ui-deploy-to-test', wait: false
+            build job: 'OpenLMIS-eswatini-ui-deploy-to-test', wait: false
         }
     }
 }
