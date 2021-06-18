@@ -48,7 +48,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                withCredentials([file(credentialsId: '8da5ba56-8ebb-4a6a-bdb5-43c9d0efb120', variable: 'ENV_FILE')]) {
+                withCredentials([file(credentialsId: 'ce28ee04-3ef5-47a0-aabc-8324f8c1f03a', variable: 'ENV_FILE')]) {
                     script {
                          try {
                              sh '''
@@ -118,14 +118,6 @@ pipeline {
         }
     }
     post {
-        fixed {
-            script {
-                BRANCH = "${env.GIT_BRANCH}".trim()
-                if (BRANCH.equals("master") || BRANCH.startsWith("rel-")) {
-                    slackSend color: 'good', message: "${env.JOB_NAME} - #${env.BUILD_NUMBER} Back to normal"
-                }
-            }
-        }
         success {
             build job: 'OpenLMIS-eswatini-ui-deploy-to-test', wait: false
         }
@@ -137,13 +129,6 @@ def notifyAfterFailure() {
     if (currentBuild.result == 'UNSTABLE') {
         messageColor = 'warning'
     }
-    BRANCH = "${env.GIT_BRANCH}".trim()
-    if (BRANCH.equals("master") || BRANCH.startsWith("rel-")) {
-        slackSend color: "${messageColor}", message: "${env.JOB_NAME} - #${env.BUILD_NUMBER} ${env.STAGE_NAME} ${currentBuild.result} (<${env.BUILD_URL}|Open>)"
-    }
-    emailext subject: "${env.JOB_NAME} - #${env.BUILD_NUMBER} ${env.STAGE_NAME} ${currentBuild.result}",
-        body: """<p>${env.JOB_NAME} - #${env.BUILD_NUMBER} ${env.STAGE_NAME} ${currentBuild.result}</p><p>Check console <a href="${env.BUILD_URL}">output</a> to view the results.</p>""",
-        recipientProviders: [[$class: 'CulpritsRecipientProvider'], [$class: 'DevelopersRecipientProvider']]
 }
 
 def processTestResults(status) {
