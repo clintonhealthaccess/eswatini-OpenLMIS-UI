@@ -117,11 +117,6 @@ pipeline {
             }
         }
     }
-    post {
-        success {
-            build job: 'OpenLMIS-eswatini-ui-deploy-to-test', wait: false
-        }
-    }
 }
 
 def notifyAfterFailure() {
