@@ -57,11 +57,11 @@ pipeline {
                                  if [ "$GIT_BRANCH" != "master" ]; then
                                      sed -i '' -e "s#^TRANSIFEX_PUSH=.*#TRANSIFEX_PUSH=false#" .env  2>/dev/null || true
                                  fi
-                                 docker-compose pull
-                                 docker-compose down --volumes
-                                 docker-compose run --entrypoint /dev-ui/build.sh eswatini-ui
-                                 docker-compose build image
-                                 docker-compose down --volumes
+                                 /usr/bin/docker-compose pull
+                                 /usr/bin/docker-compose down --volumes
+                                 /usr/bin/docker-compose run --entrypoint /dev-ui/build.sh eswatini-ui
+                                 /usr/bin/docker-compose build image
+                                 /usr/bin/docker-compose down --volumes
                                  sudo rm -rf node_modules/
                              '''
                              currentBuild.result = processTestResults('SUCCESS')
