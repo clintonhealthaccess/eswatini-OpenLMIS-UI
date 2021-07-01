@@ -60,6 +60,7 @@ pipeline {
                                  /bin/docker-compose pull
                                  /bin/docker-compose down --volumes
                                  /bin/docker-compose run --entrypoint /dev-ui/build.sh eswatini-ui
+                                 /bin/docker-compose start eswatini-ui
                                  /bin/docker-compose build image
                                  /bin/docker-compose down --volumes
                                  sudo rm -rf node_modules/
