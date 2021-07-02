@@ -1,7 +1,7 @@
 version: "2"
 services:
   eswatini-ui:
-    image: openlmis/dev-ui:9.0.3-SNAPSHOT
+    image: openlmis/dev-ui:9.0.2
     working_dir: /app
     volumes:
       - '.:/app'
