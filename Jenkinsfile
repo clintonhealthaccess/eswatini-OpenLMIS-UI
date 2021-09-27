@@ -57,6 +57,8 @@ pipeline {
                                  if [ "$GIT_BRANCH" != "master" ]; then
                                      sed -i '' -e "s#^TRANSIFEX_PUSH=.*#TRANSIFEX_PUSH=false#" .env  2>/dev/null || true
                                  fi
+                                 sudo rm -rf node_modules/
+                                 sudo rm -rf build/
                                  docker-compose pull
                                  docker-compose down --volumes
                                  export COMPOSE_INTERACTIVE_NO_CLI=1
