@@ -34,7 +34,7 @@ services:
       - offline-ui
       - eswatini-cmis-ui
   auth-ui:
-    image: openlmis/auth-ui:6.2.6
+    image: openlmis/auth-ui:6.2.7-SNAPSHOT
     volumes:
       - '/openlmis-auth-ui'
   fulfillment-ui:
@@ -42,15 +42,15 @@ services:
     volumes:
       - '/openlmis-fulfillment-ui'
   referencedata-ui:
-    image: openlmis/referencedata-ui:5.6.5
+    image: openlmis/referencedata-ui:5.6.6-SNAPSHOT
     volumes:
       - '/openlmis-referencedata-ui'
   report-ui:
-    image: openlmis/report-ui:5.2.6
+    image: openlmis/report-ui:5.2.7-SNAPSHOT
     volumes:
       - '/openlmis-report-ui'
   requisition-ui:
-    image: openlmis/requisition-ui:7.0.5
+    image: openlmis/requisition-ui:7.0.6-SNAPSHOT
     volumes:
       - '/openlmis-requisition-ui'
   stockmanagement-ui:
@@ -58,7 +58,7 @@ services:
     volumes:
      - '/openlmis-stockmanagement-ui'
   cce-ui:
-    image: openlmis/cce-ui:1.0.9
+    image: openlmis/cce-ui:1.1.0-SNAPSHOT
     volumes:
      - '/openlmis-cce-ui'
   ui-components:
@@ -66,11 +66,11 @@ services:
     volumes:
       - '/openlmis-ui-components'
   ui-layout:
-    image: openlmis/ui-layout:5.1.9
+    image: openlmis/ui-layout:5.2.0-SNAPSHOT
     volumes:
       - '/openlmis-ui-layout'
   offline-ui:
-    image: openlmis/offline-ui:1.0.0
+    image: openlmis/offline-ui:1.0.1-SNAPSHOT
     volumes:
       - '/openlmis-offline-ui'
   eswatini-cmis-ui:
