@@ -42,7 +42,7 @@ services:
     volumes:
       - '/openlmis-fulfillment-ui'
   referencedata-ui:
-    image: openlmis/referencedata-ui:5.6.6
+    image: openlmis/referencedata-ui:5.6.7
     volumes:
       - '/openlmis-referencedata-ui'
   report-ui:
