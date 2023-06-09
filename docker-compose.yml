@@ -54,7 +54,7 @@ services:
     volumes:
       - '/openlmis-requisition-ui'
   stockmanagement-ui:
-    image: openlmis/stockmanagement-ui:2.1.4
+    image: openlmis/stockmanagement-ui:2.0.8
     volumes:
      - '/openlmis-stockmanagement-ui'
   cce-ui:
