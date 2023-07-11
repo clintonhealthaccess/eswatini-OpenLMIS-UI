@@ -62,7 +62,7 @@ services:
     volumes:
      - '/openlmis-cce-ui'
   ui-components:
-    image: openlmis/ui-components:7.2.7
+    image: openlmis/ui-components:7.2.9
     volumes:
       - '/openlmis-ui-components'
   ui-layout:
