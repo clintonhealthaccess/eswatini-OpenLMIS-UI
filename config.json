@@ -9,7 +9,6 @@
     "/openlmis-fulfillment-ui",
     "/openlmis-cce-ui",
     "/openlmis-stockmanagement-ui",
-    "/openlmis-offline-ui",
-    "/eswatini-cmis-ui"
+    "/openlmis-offline-ui"
   ]
 }
