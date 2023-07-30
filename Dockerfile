@@ -6,7 +6,7 @@ COPY /build/webapp /usr/share/nginx/html
 COPY /consul /consul
 COPY run.sh /run.sh
 #RUN sed -i s/deb.debian.org/archive.debian.org/g /etc/apt/sources.list
-RUN echo "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.list
+#RUN echo "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.list
 RUN chmod +x run.sh \
   && apt-get update \
   && apt-get install -y curl gnupg \
