@@ -20,7 +20,7 @@ services:
       - ui-components
       - ui-layout
       - offline-ui
-      # - eswatini-cmis-ui
+      - eswatini-cmis-ui
     depends_on:
       - auth-ui
       - fulfillment-ui
@@ -32,7 +32,7 @@ services:
       - ui-components
       - ui-layout
       - offline-ui
-      # - eswatini-cmis-ui
+      - eswatini-cmis-ui
   auth-ui:
     image: openlmis/auth-ui:6.2.8
     volumes:
@@ -73,10 +73,10 @@ services:
     image: openlmis/offline-ui:1.0.2
     volumes:
       - '/openlmis-offline-ui'
-  # eswatini-cmis-ui:
-  #   image: kausamusa/eswatini-cmis-ui:1.0.4-SNAPSHOT
-  #   volumes:
-  #     - '/eswatini-cmis-ui'
+  eswatini-cmis-ui:
+    image: kausamusa/eswatini-cmis-ui:1.0.4-SNAPSHOT
+    volumes:
+      - '/eswatini-cmis-ui'
   image:
     build: .
     image: kausamusa/eswatini-ui
